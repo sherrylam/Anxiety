@@ -1,0 +1,6 @@
+CurrentState,KeyTyped,KeyCode,MouseEvent,ClickableName,MapDirection,NextState
+Splash,,,mouseReleased,,,Start
+Start,,,,,E,Masks
+Masks,,,,,E,Speech
+Masks,,,,,W,Start
+Speech,,,,,W,Masks
