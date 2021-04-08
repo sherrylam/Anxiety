@@ -8,7 +8,7 @@ function preload() {
   // loads all the image files
   animation = loadAnimation('assets/character_sprite1.png', 'assets/character_sprite4.png');
 
-  adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv', 'data/clickableLayout.csv');
+  adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv');
 }
 
 function setup() {
@@ -34,7 +34,8 @@ function draw() {
   // draws background rooms and handles movement from one to another
   adventureManager.draw();
   
-  if( adventureManager.getStateName() !== "Splash") {
+  if( adventureManager.getStateName() !== "Splash" &&
+      adventureManager.getStateName() !== "Instructions") {
       
     // responds to keydowns
     moveSprite();
@@ -54,17 +55,33 @@ function mouseReleased() {
 }
 
 function moveSprite() {
-  if(keyIsDown(RIGHT_ARROW))
+  //right
+  if(keyIsDown(68)) {
+    playerSprite.animation.play();
     playerSprite.velocity.x = 8;
-  else if(keyIsDown(LEFT_ARROW))
+    playerSprite.mirrorX(1);
+  }
+  //left
+  else if(keyIsDown(65)) {
+    playerSprite.animation.play();
     playerSprite.velocity.x = -8;
-  else
+    playerSprite.mirrorX(-1);
+  }
+  else {
     playerSprite.velocity.x = 0;
-
-  if(keyIsDown(DOWN_ARROW))
+    playerSprite.animation.stop();
+  }
+  //down
+  if(keyIsDown(83)) {
+    playerSprite.animation.play();
     playerSprite.velocity.y = 8;
-  else if(keyIsDown(UP_ARROW))
+  }
+  //up
+  else if(keyIsDown(87)) {
+    playerSprite.animation.play();
     playerSprite.velocity.y = -8;
-  else
+  }
+  else {
     playerSprite.velocity.y = 0;
+  }
 }
