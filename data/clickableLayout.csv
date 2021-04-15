@@ -1,0 +1,3 @@
+ID,Name,State,PNGFilename,Text,x,y,visible
+0,TalkToDog,Chaos,,Talk to Dog,450,450,yes
+1,GetRelief,ChaosTalk,,Go to Reliefs,450,450,yes
