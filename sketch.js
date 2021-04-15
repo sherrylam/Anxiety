@@ -20,7 +20,7 @@ function preload() {
   animation = loadAnimation('assets/character_sprite1.png', 'assets/character_sprite4.png')
   npcanimation = loadAnimation('assets/npc_sprite1.png', 'assets/npc_sprite4.png')
 
-  adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv');
+  adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv', 'data/clickableLayout.csv');
   clickablesManager = new ClickableManager('data/clickableLayout.csv');
 }
 
@@ -135,9 +135,9 @@ function setupClickables() {
 
 // tint when mouse is over
 clickableButtonHover = function () {
-  this.color = "#F7F7F7";
+  this.color = "#454545";
   this.noTint = false;
-  this.tint = "#F7F7F7";
+  this.tint = "#454545";
 }
 
 // color a light gray if off

@@ -1,6 +1,6 @@
 CurrentState,KeyTyped,KeyCode,MouseEvent,ClickableName,MapDirection,NextState
 Splash,,,mouseReleased,,,Instructions
-Instructions,,,mouseReleased,,,Start
+Instructions,,,mouseReleased,StartGame,,Start
 Start,,,,,E,Masks
 Masks,,,,,E,Speech
 Masks,,,,,W,Start
