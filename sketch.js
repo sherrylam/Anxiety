@@ -1,12 +1,21 @@
+
+// sprites
 var animation;
 var playerSprite;
+var npcanimation;
+var npcSprite;
 
 // adventure manager global  
 var adventureManager;
 
+// clickables
+var clickablesManager;    // the manager class
+var clickables;   
+
 function preload() {
   // loads all the image files
-  animation = loadAnimation('assets/character_sprite1.png', 'assets/character_sprite4.png');
+  animation = loadAnimation('assets/character_sprite1.png', 'assets/character_sprite4.png')
+  npcanimation = loadAnimation('assets/npc_sprite1.png', 'assets/npc_sprite4.png')
 
   adventureManager = new AdventureManager('data/adventureStates.csv', 'data/interactionTable.csv');
 }
@@ -17,6 +26,10 @@ function setup() {
   // change how many frames (of draw loop) each animation frame is
   // visible for. bigger #s = slower speed
   animation.frameDelay = 10;
+
+  //npc sprite
+  npcSprite = createSprite(width/2, height/2, 100,100);
+  npcSprite.addAnimation("wag", npcanimation);
 
   // create a sprite from a single image
   playerSprite = createSprite(width/2, height/2, 200, 200);
@@ -43,6 +56,10 @@ function draw() {
     // this is a function of p5.js, not of this sketch
     drawSprite(playerSprite);
   } 
+
+  if( adventureManager.getStateName() == "Chaos") {
+    drawSprite(npcSprite);
+  }
 }
 
 function keyPressed() {   
