@@ -1,4 +1,3 @@
 ID,Name,State,PNGFilename,Text,x,y,visible
-0,StartGame,Instructions,,Start,800,650,yes
-1,TalkToDog,Chaos,,Talk to Dog,450,450,yes
-2,GetRelief,ChaosTalk,,Go to Reliefs,450,450,yes
+0,StartGame,Instructions,assets/startbutton.png,,800,650,yes
+1,GetRelief,,assets/reliefbutton.png,,550,450,no

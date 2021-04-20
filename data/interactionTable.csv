@@ -1,6 +1,6 @@
 CurrentState,KeyTyped,KeyCode,MouseEvent,ClickableName,MapDirection,NextState
 Splash,,,mouseReleased,,,Instructions
-Instructions,,,mouseReleased,StartGame,,Start
+Instructions,,,,StartGame,,Start
 Start,,,,,E,Masks
 Masks,,,,,E,Speech
 Masks,,,,,W,Start
@@ -17,10 +17,7 @@ Dizzy,,,,,W,Heartbeat
 Heartbeat,,,,,E,Dizzy
 Heartbeat,,,,,N,Chaos
 Chaos,,,,,S,Heartbeat
-Chaos,,,,TalkToDog,,ChaosTalk
-Chaos,r,,,,,Relief
-ChaosTalk,,,,GetRelief,,Relief
-ChaosTalk,,,,,S,Heartbeat
+Chaos,r,,,GetRelief,,Relief
 Relief,,,,,N,Exercise
 Relief,,,,,E,Journaling
 Relief,,,,,S,Yoga
